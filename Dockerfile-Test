@@ -8,4 +8,4 @@ COPY run_tests.sh /opt
 
 RUN chmod +x /opt/run_tests.sh
 
-CMD /opt/run_tests.sh
+CMD nohup /opt/wso2esb-5.0.0/bin/wso2server.sh > /dev/null & /opt/run_tests.sh
