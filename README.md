@@ -32,7 +32,18 @@ Also, expose following ports: `8280 8243 9763 9443 ${OSGI_CONSOLE_PORT}`. Execut
 
 ### Testing
 
-For testing, there is a shell script named ´run_tests.sh´ which checks the server is up and running fine. Please, if you are interested on this, feel free to take a look into it.
+For testing, there is a shell script named `run_tests.sh` which checks the server is up and running fine. And also there is another Dockerfile for testing named `Dockerfile-Test`.
+
+How to test it? In this case, we use following steps:
+
+```bash
+docker build -t serrodcal/wso2esb5-test:0.1.0 -f Dockerfile-Test .
+docker run -d --name esb1-test serrodcal/wso2esb5-test:0.1.0
+docker logs esb1-test -f
+```
+
+Wait until `Test passed.` message appears. Other messages mean the test failed.
+
 
 ### Provisioning
 
