@@ -54,8 +54,6 @@ There are several ways to provisioning this, for instance, create your own Docke
 * [Docker](https://www.docker.com/) - Platform containerization
 * [WSO2 ESB 5.0.0](https://wso2.com/) - Enterprise integrator middleware
 
-## Contributing
-
 ## Versioning
 
 We use _X.Y.z_ for versioning. For the versions available, see the tags on this repository.
