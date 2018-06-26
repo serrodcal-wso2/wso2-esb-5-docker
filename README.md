@@ -30,15 +30,24 @@ ENV OSGI_CONSOLE_PORT ${OSGI_CONSOLE_PORT}
 
 Also, expose following ports: `8280 8243 9763 9443 ${OSGI_CONSOLE_PORT}`. Execute `~$ docker run -d --name esb1 -p 8280:8280 -p 8243:8243 -p 9763:9763 -p 9443:9443 -p 19444:19444 serrodcal/wso2esb5:0.1.0` to access by those ports.
 
-####
+#### Environments variable
 
-Modify OSGi Console port using `--env OSGI_CONSOLE_PORT=19443` and do not forget to change mappings port `-p 19443:19443`, or whatever you chose.
+This image has 2 environment variables by default:
+
+* JAVA_OPTS as `-Xms2048m -Xmx2048m`.
+* OSGI_CONSOLE_PORT as `19444`.
+
+The first one is used to set your own java options. The second one is used to define OSGi Console port dinamically. You can chose whatever you want in both.
+
+For example, modify OSGi Console port using `--env OSGI_CONSOLE_PORT=19443` and do not forget to change mappings port `-p 19443:19443`, or whatever you chose.
 
 Complete statement is:
 
 ```bash
 docker run -d --name esb1 -p 8280:8280 -p 8243:8243 -p 9763:9763 -p 9443:9443 -p 19443:19443 --env OSGI_CONSOLE_PORT=19443 serrodcal/wso2esb5:0.1.0
 ```
+
+Or, modify JAVA_OPTS like this `--env JAVA_OPTS=-Xdebug -Xnoagent`.
 
 ### Testing
 
