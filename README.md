@@ -30,6 +30,16 @@ ENV OSGI_CONSOLE_PORT ${OSGI_CONSOLE_PORT}
 
 Also, expose following ports: `8280 8243 9763 9443 ${OSGI_CONSOLE_PORT}`. Execute `~$ docker run -d --name esb1 -p 8280:8280 -p 8243:8243 -p 9763:9763 -p 9443:9443 -p 19444:19444 serrodcal/wso2esb5:0.1.0` to access by those ports.
 
+####
+
+Modify OSGi Console port using `--env OSGI_CONSOLE_PORT=19443` and do not forget to change mappings port `-p 19443:19443`, or whatever you chose.
+
+Complete statement is:
+
+```bash
+docker run -d --name esb1 -p 8280:8280 -p 8243:8243 -p 9763:9763 -p 9443:9443 -p 19443:19443 --env OSGI_CONSOLE_PORT=19443 serrodcal/wso2esb5:0.1.0
+```
+
 ### Testing
 
 For testing, there is a shell script named `run_tests.sh` which checks the server is up and running fine. And also there is another Dockerfile for testing named `Dockerfile-Test`.
