@@ -2,6 +2,8 @@
 
 This is a own image for WSO2 ESB 5.0.0. Its purpose is to be able to be deployed in any environment, even in production.
 
+Current version is [0.1.0](https://hub.docker.com/r/serrodcal/wso2esb5/). 
+
 ## Getting started
 
 ### Prerequisites
